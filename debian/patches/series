@@ -1,0 +1,12 @@
+skip_animated_cursor_test.diff
+fix_dead_keys.diff
+gcc_11.diff
+add-surface-creat-signal.patch
+fix-some-places-are-judged-empty-processing.patch
+Process-global-mouse-position-pinterenter.patch
+fix-folating-point-number-causes-window-size-erroe.patch
+fix-screen-window-corresponds-the-coordinate-calculation-error.patch
+fix-when-refreshing-buffer-is-empty-cause-crash.patch
+fix-drag-icon-will-sink-during.patch
+fix-geometry-and-motion-conversion.patch
+fix-setFixedSize-window-size-abnoraml.patch

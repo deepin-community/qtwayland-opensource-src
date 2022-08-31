@@ -1,0 +1,14 @@
+Description: build fixes for GCC 11
+Origin: upstream, https://code.qt.io/cgit/qt/qtwayland.git/commit/?id=1aa6ec2c778504d9
+Last-Update: 2021-08-10
+
+--- a/tests/auto/client/shared/corecompositor.cpp
++++ b/tests/auto/client/shared/corecompositor.cpp
+@@ -27,6 +27,7 @@
+ ****************************************************************************/
+ 
+ #include "corecompositor.h"
++#include <thread>
+ 
+ namespace MockCompositor {
+ 

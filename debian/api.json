@@ -1,0 +1,4 @@
+{"Filepath":"include/QtWaylandClient/qtwaylandclientversion.h","Functions":null,"Records":[{"Name":"macro","Fields":["QTWAYLANDCLIENT_VERSION","QTWAYLANDCLIENT_VERSION_STR","QT_QTWAYLANDCLIENT_VERSION_H"]}]}
+{"Filepath":"include/QtWaylandClient/qwaylandclientexport.h","Functions":null,"Records":[{"Name":"macro","Fields":["DEPRECATED_HEADER_QtWaylandClient_qwaylandclientexport_h"]}]}
+{"Filepath":"include/QtWaylandCompositor/qtwaylandcompositorversion.h","Functions":null,"Records":[{"Name":"macro","Fields":["QTWAYLANDCOMPOSITOR_VERSION","QTWAYLANDCOMPOSITOR_VERSION_STR","QT_QTWAYLANDCOMPOSITOR_VERSION_H"]}]}
+{"Filepath":"include/QtWaylandCompositor/qwaylandexport.h","Functions":null,"Records":[{"Name":"macro","Fields":["DEPRECATED_HEADER_QtWaylandCompositor_qwaylandexport_h"]}]}

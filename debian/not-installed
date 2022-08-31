@@ -1,0 +1,5 @@
+usr/lib/*/cmake/Qt5Gui/Qt5Gui_*Plugin.cmake
+usr/lib/*/cmake/Qt5WaylandClient/Qt5WaylandClient_*Plugin.cmake
+usr/lib/*/cmake/Qt5WaylandCompositor/Qt5WaylandCompositor_*Plugin.cmake
+usr/lib/*/libQt5WaylandClient.la
+usr/lib/*/libQt5WaylandCompositor.la
