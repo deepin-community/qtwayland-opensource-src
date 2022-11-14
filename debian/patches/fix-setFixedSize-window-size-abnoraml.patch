@@ -19,7 +19,7 @@ Index: qtwayland-opensource-src/src/client/qwaylandwindow.cpp
 ===================================================================
 --- qtwayland-opensource-src.orig/src/client/qwaylandwindow.cpp
 +++ qtwayland-opensource-src/src/client/qwaylandwindow.cpp
-@@ -340,11 +340,15 @@ void QWaylandWindow::setWindowIcon(const
+@@ -335,11 +335,15 @@ void QWaylandWindow::setWindowIcon(const
  
  void QWaylandWindow::setGeometry_helper(const QRect &rect)
  {
