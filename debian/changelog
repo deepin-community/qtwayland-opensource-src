@@ -1,3 +1,9 @@
+qtwayland-opensource-src (5.15.7-1+dde) unstable; urgency=medium
+
+  * New upstream release (5.15.7).
+
+ -- Duan Ting <duanting@uniontech.com>  Mon, 14 Nov 2022 16:00:33 +0800
+
 qtwayland-opensource-src (5.15.3-1+dde) stable; urgency=medium
 
   * ['Rebuild  against by  current gcc 11.2']

@@ -1,1 +1,1 @@
-usr/lib/*/qt5/qml/QtWayland/Client/TextureSharing/*
+usr/lib/${DEB_HOST_MULTIARCH}/qt5/qml/QtWayland/Client/TextureSharing/*

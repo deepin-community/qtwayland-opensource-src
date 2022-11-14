@@ -19,16 +19,16 @@ Build-Depends: dbus <!nocheck>,
                libxrender-dev,
                pkg-config,
                pkg-kde-tools,
-               qtbase5-dev (>= 5.15.3~),
-               qtbase5-dev:native (>= 5.15.3~),
-               qtbase5-private-dev (>= 5.15.3~),
-               qtdeclarative5-private-dev (>= 5.15.3~),
+               qtbase5-dev (>= 5.15.7~),
+               qtbase5-dev:native (>= 5.15.7~),
+               qtbase5-private-dev (>= 5.15.7~),
+               qtdeclarative5-private-dev (>= 5.15.7~),
                xauth <!nocheck>,
                xvfb <!nocheck>
-Build-Depends-Indep: qdoc-qt5 (>= 5.15.3~) <!nodoc>,
-                     qhelpgenerator-qt5 (>= 5.15.3~) <!nodoc>,
-                     qtattributionsscanner-qt5 (>= 5.15.3~) <!nodoc>,
-                     qtbase5-doc-html (>= 5.15.3~) <!nodoc>
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.7~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.7~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.7~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.15.7~) <!nodoc>
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: http://qt-project.org/

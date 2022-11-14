@@ -342,7 +342,12 @@ void QWaylandWindow::setGeometry_helper(const QRect &rect)
     if (mSubSurfaceWindow) {
         QMargins m = QPlatformWindow::parent()->frameMargins();
         mSubSurfaceWindow->set_position(rect.x() + m.left(), rect.y() + m.top());
-        mSubSurfaceWindow->parent()->window()->requestUpdate();
+
+        QWaylandWindow *parentWindow = mSubSurfaceWindow->parent();
+        if (parentWindow && parentWindow->isExposed()) {
+            QRect parentExposeGeometry(QPoint(), parentWindow->geometry().size());
+            parentWindow->sendExposeEvent(parentExposeGeometry);
+        }
     }
 }
 
@@ -411,6 +416,7 @@ void QWaylandWindow::closePopups(QWaylandWindow *parent)
 
 QPlatformScreen *QWaylandWindow::calculateScreenFromSurfaceEvents() const
 {
+    QReadLocker lock(&mSurfaceLock);
     if (mSurface) {
         if (auto *screen = mSurface->oldestEnteredScreen())
             return screen;
@@ -459,13 +465,14 @@ void QWaylandWindow::lower()
 
 void QWaylandWindow::setMask(const QRegion &mask)
 {
+    QReadLocker locker(&mSurfaceLock);
+    if (!mSurface)
+        return;
+
     if (mMask == mask)
         return;
 
     mMask = mask;
-
-    if (!mSurface)
-        return;
 
     if (mMask.isEmpty()) {
         mSurface->set_input_region(nullptr);
@@ -550,6 +557,10 @@ void QWaylandWindow::sendRecursiveExposeEvent()
 void QWaylandWindow::attach(QWaylandBuffer *buffer, int x, int y)
 {
     Q_ASSERT(!buffer->committed());
+    QReadLocker locker(&mSurfaceLock);
+    if (mSurface == nullptr)
+        return;
+
     if (buffer) {
         handleUpdate();
         buffer->setBusy();
@@ -568,6 +579,10 @@ void QWaylandWindow::attachOffset(QWaylandBuffer *buffer)
 
 void QWaylandWindow::damage(const QRect &rect)
 {
+    QReadLocker locker(&mSurfaceLock);
+    if (mSurface == nullptr)
+        return;
+
     mSurface->damage(rect.x(), rect.y(), rect.width(), rect.height());
 }
 
@@ -598,6 +613,8 @@ void QWaylandWindow::commit(QWaylandBuffer *buffer, const QRegion &damage)
         qCDebug(lcWaylandBackingstore) << "Buffer already committed, ignoring.";
         return;
     }
+
+    QReadLocker locker(&mSurfaceLock);
     if (!mSurface)
         return;
 
@@ -611,7 +628,9 @@ void QWaylandWindow::commit(QWaylandBuffer *buffer, const QRegion &damage)
 
 void QWaylandWindow::commit()
 {
-    mSurface->commit();
+    QReadLocker locker(&mSurfaceLock);
+    if (mSurface != nullptr)
+        mSurface->commit();
 }
 
 const wl_callback_listener QWaylandWindow::callbackListener = {
@@ -702,6 +721,7 @@ QPointF QWaylandWindow::mapFromWlSurface(const QPointF &surfacePosition) const
 
 wl_surface *QWaylandWindow::wlSurface()
 {
+    QReadLocker locker(&mSurfaceLock);
     return mSurface ? mSurface->object() : nullptr;
 }
 
@@ -726,7 +746,8 @@ QWaylandScreen *QWaylandWindow::waylandScreen() const
 
 void QWaylandWindow::handleContentOrientationChange(Qt::ScreenOrientation orientation)
 {
-    if (mDisplay->compositorVersion() < 2)
+    QReadLocker locker(&mSurfaceLock);
+    if (mDisplay->compositorVersion() < 2 || mSurface == nullptr)
         return;
 
     wl_output_transform transform;
@@ -1234,12 +1255,14 @@ bool QWaylandWindow::isOpaque() const
 
 void QWaylandWindow::setOpaqueArea(const QRegion &opaqueArea)
 {
-    if (opaqueArea == mOpaqueArea || !mSurface)
+    const QRegion translatedOpaqueArea = opaqueArea.translated(frameMargins().left(), frameMargins().top());
+
+    if (translatedOpaqueArea == mOpaqueArea || !mSurface)
         return;
 
-    mOpaqueArea = opaqueArea;
+    mOpaqueArea = translatedOpaqueArea;
 
-    struct ::wl_region *region = mDisplay->createRegion(opaqueArea);
+    struct ::wl_region *region = mDisplay->createRegion(translatedOpaqueArea);
     mSurface->set_opaque_region(region);
     wl_region_destroy(region);
 }
