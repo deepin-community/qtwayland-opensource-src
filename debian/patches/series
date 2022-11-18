@@ -51,3 +51,4 @@ fix-when-refreshing-buffer-is-empty-cause-crash.patch
 fix-drag-icon-will-sink-during.patch
 fix-geometry-and-motion-conversion.patch
 fix-setFixedSize-window-size-abnoraml.patch
+fix-eglGetPlatformDisplay-dont-work.patch
