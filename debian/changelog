@@ -1,6 +1,11 @@
 qtwayland-opensource-src (5.15.7-1+dde) unstable; urgency=medium
 
+  [ Duan Ting ]
   * New upstream release (5.15.7).
+
+  [ Tang Haixiang ]
+  * client: Fix: eglGetPlatformDisplay dont work
+    -- fix-eglGetPlatformDisplay-dont-work.patch 
 
  -- Duan Ting <duanting@uniontech.com>  Mon, 14 Nov 2022 16:00:33 +0800
 
