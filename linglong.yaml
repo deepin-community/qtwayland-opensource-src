@@ -1,0 +1,79 @@
+package:
+  id: qtwayland
+  name: qtwayland
+  kind: lib
+  version: 5.15.7-1+dde
+  description: |
+    qtwayland
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: qtbase
+    version: 5.15.7-1+dde
+  - id: qtdeclarative
+    version: 5.15.7-1+dde
+
+source:
+  kind: local
+  patch:
+    - debian/patches/0001-Client-Announce-an-output-after-receiving-more-compl.patch
+    - debian/patches/0002-Fix-issue-with-repeated-window-size-changes.patch
+    - debian/patches/0004-Client-Connect-drags-being-accepted-to-updating-the-.patch
+    - debian/patches/0005-Client-Disconnect-registry-listener-on-destruction.patch
+    - debian/patches/0006-Client-Set-XdgShell-size-hints-before-the-first-comm.patch
+    - debian/patches/0007-Fix-build.patch
+    - debian/patches/0008-Fix-remove-listener.patch
+    - debian/patches/0009-Hook-up-queryKeyboardModifers.patch
+    - debian/patches/0011-Correctly-detect-if-image-format-is-supported-by-QIm.patch
+    - debian/patches/0013-Client-Don-t-always-recreate-frame-callbacks.patch
+    - debian/patches/0014-Client-Always-destroy-frame-callback-in-the-actual-c.patch
+    - debian/patches/0015-Fix-the-logic-for-decoding-modifiers-map-in-Wayland-.patch
+    - debian/patches/0016-Wayland-client-use-wl_keyboard-to-determine-active-s.patch
+    - debian/patches/0017-Client-do-not-empty-clipboard-when-a-new-popup-windo.patch
+    - debian/patches/0018-Set-preedit-cursor-when-cursor-equals-to-0.patch
+    - debian/patches/0019-Client-Implement-DataDeviceV3.patch
+    - debian/patches/0020-Client-Delay-deletion-of-QDrag-object-until-after-we.patch
+    - debian/patches/0021-Client-Avoid-processing-of-events-when-showing-windo.patch
+    - debian/patches/0022-Handle-registry_global-out-of-constructor.patch
+    - debian/patches/0023-Connect-flushRequest-after-forceRoundTrip.patch
+    - debian/patches/0024-Move-the-wayland-socket-polling-to-a-separate-event-.patch
+    - debian/patches/0026-Do-not-create-decorations-when-the-shellSurface-is-n.patch
+    - debian/patches/0028-Fix-crash-if-no-input-method-module-could-be-loaded.patch
+    - debian/patches/0029-Client-Remove-mWaitingForUpdateDelivery.patch
+    - debian/patches/0030-Cursor-position-0-should-still-show-the-cursor.patch
+    - debian/patches/0031-Update-the-preedit-styling-mapping.patch
+    - debian/patches/0032-client-Simplify-round-trip-behavior.patch
+    - debian/patches/0033-Client-Fix-opaque-region-setter.patch
+    - debian/patches/0034-Use-proper-dependencies-in-compile-tests.patch
+    - debian/patches/0035-client-update-button-state-and-etc-in-pointer_leave.patch
+    - debian/patches/0036-Revert-Client-Remove-mWaitingForUpdateDelivery.patch
+    - debian/patches/0037-Fix-race-condition-on-mWaitingForUpdateDelivery.patch
+    - debian/patches/0038-use-poll-2-when-reading-from-clipboard.patch
+    - debian/patches/0039-Reduce-memory-leakage.patch
+    - debian/patches/0040-Fix-build-with-libcxx-missing-array-include.patch
+    - debian/patches/0041-Only-close-popup-in-the-the-hierchary.patch
+    - debian/patches/0042-Build-fixes-for-GCC-11.patch
+    - debian/patches/0043-Check-pointer-for-null-before-use-in-ASSERT.patch
+    - debian/patches/0044-Use-wl_surface.damage_buffer-on-the-client-side.patch
+    - debian/patches/0045-Client-clear-focus-on-touch-cancel.patch
+    - debian/patches/0046-Guard-mResizeDirty-by-the-correctMutex.patch
+    - debian/patches/0047-client-Synthesize-enter-leave-event-for-popup-in-xdg.patch
+    - debian/patches/0048-Fix-compile-tests.patch
+    - debian/patches/skip_animated_cursor_test.diff
+    - debian/patches/add-surface-creat-signal.patch
+    - debian/patches/fix-some-places-are-judged-empty-processing.patch
+    - debian/patches/Process-global-mouse-position-pinterenter.patch
+    - debian/patches/fix-folating-point-number-causes-window-size-erroe.patch
+    - debian/patches/fix-screen-window-corresponds-the-coordinate-calculation-error.patch
+    - debian/patches/fix-when-refreshing-buffer-is-empty-cause-crash.patch
+    - debian/patches/fix-drag-icon-will-sink-during.patch
+    - debian/patches/fix-geometry-and-motion-conversion.patch
+    - debian/patches/fix-setFixedSize-window-size-abnoraml.patch
+    - debian/patches/fix-eglGetPlatformDisplay-dont-work.patch
+
+build:
+  kind: qmake
+
