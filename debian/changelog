@@ -1,8 +1,8 @@
-qtwayland-opensource-src (5.15.7.1-1+dde) UNRELEASED; urgency=medium
+qtwayland-opensource-src (5.15.7.1-1+dde) unstable; urgency=medium
 
   * Update the abi package version number.
 
- -- Duan Ting <duanting@uniontech.com>  Thu, 01 Dec 2022 17:04:45 +0800
+ -- Duan Ting <duanting@uniontech.com>  Thu, 01 Dec 2022 17:08:03 +0800
 
 qtwayland-opensource-src (5.15.7-1+dde) unstable; urgency=medium
 
