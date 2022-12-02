@@ -1,5 +1,7 @@
 qtwayland-opensource-src (5.15.7.2-1+dde) UNRELEASED; urgency=medium
 
+  * Update symbols.
+
  -- Duan Ting <duanting@uniontech.com>  Fri, 02 Dec 2022 09:31:52 +0800
 
 qtwayland-opensource-src (5.15.7.1-1+dde) unstable; urgency=medium

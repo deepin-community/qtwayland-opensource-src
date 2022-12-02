@@ -1,6 +1,6 @@
 # SymbolsHelper-Confirmed: 5.15.3 amd64
 libQt5WaylandClient.so.5 libqt5waylandclient5 #MINVER#
-| libqt5waylandclient5 #MINVER#, qtwayland-client-abi-5-15-6
+| libqt5waylandclient5 #MINVER#, qtwayland-client-abi-5-15-7
 * Build-Depends-Package: libqt5waylandclient5-dev
  Qt_5.0@Qt_5.0 5.10.1
  Qt_5.10@Qt_5.10 5.10.1
