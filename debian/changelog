@@ -1,3 +1,7 @@
+qtwayland-opensource-src (5.15.7.3-1+dde) UNRELEASED; urgency=medium
+
+ -- Tang Haixiang <tanghaixiang@uniontech.com>  Thu, 22 Dec 2022 09:09:40 +0800
+
 qtwayland-opensource-src (5.15.7.2-1+dde) unstable; urgency=medium
 
   * Update symbols.
