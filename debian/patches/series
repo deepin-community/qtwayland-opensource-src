@@ -52,3 +52,4 @@ fix-drag-icon-will-sink-during.patch
 fix-geometry-and-motion-conversion.patch
 fix-setFixedSize-window-size-abnoraml.patch
 fix-eglGetPlatformDisplay-dont-work.patch
+client-avoid-processing-of-events-when-showing-windows.patch
