@@ -73,6 +73,7 @@ source:
     - debian/patches/fix-geometry-and-motion-conversion.patch
     - debian/patches/fix-setFixedSize-window-size-abnoraml.patch
     - debian/patches/fix-eglGetPlatformDisplay-dont-work.patch
+    - debian/patches/client-avoid-processing-of-events-when-showing-windows.patch
 
 build:
   kind: qmake
