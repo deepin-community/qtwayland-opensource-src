@@ -19,16 +19,16 @@ Build-Depends: dbus <!nocheck>,
                libxrender-dev,
                pkg-config,
                pkg-kde-tools,
-               qtbase5-dev (>= 5.15.7~),
-               qtbase5-dev:native (>= 5.15.7~),
-               qtbase5-private-dev (>= 5.15.7~),
-               qtdeclarative5-private-dev (>= 5.15.7~),
+               qtbase5-dev (>= 5.15.8~),
+               qtbase5-dev:native (>= 5.15.8~),
+               qtbase5-private-dev (>= 5.15.8~),
+               qtdeclarative5-private-dev (>= 5.15.8~),
                xauth <!nocheck>,
                xvfb <!nocheck>
-Build-Depends-Indep: qdoc-qt5 (>= 5.15.7~) <!nodoc>,
-                     qhelpgenerator-qt5 (>= 5.15.7~) <!nodoc>,
-                     qtattributionsscanner-qt5 (>= 5.15.7~) <!nodoc>,
-                     qtbase5-doc-html (>= 5.15.7~) <!nodoc>
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.8~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.8~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.8~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.15.8~) <!nodoc>
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: http://qt-project.org/
@@ -48,7 +48,7 @@ Description: Qt 5 Wayland examples
 Package: libqt5waylandclient5
 Architecture: any
 Multi-Arch: same
-Provides: qtwayland-client-abi-5-15-7
+Provides: qtwayland-client-abi-5-15-8
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: QtWayland client library
  QtWayland is a Qt 5 module that wraps the functionality of Wayland.
@@ -58,7 +58,7 @@ Description: QtWayland client library
 Package: libqt5waylandcompositor5
 Architecture: any
 Multi-Arch: same
-Provides: qtwayland-compositor-abi-5-15-7
+Provides: qtwayland-compositor-abi-5-15-8
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: QtWayland compositor library
  QtWayland is a Qt 5 module that wraps the functionality of Wayland.

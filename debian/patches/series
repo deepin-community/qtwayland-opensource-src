@@ -9,7 +9,6 @@
 0011-Correctly-detect-if-image-format-is-supported-by-QIm.patch
 0013-Client-Don-t-always-recreate-frame-callbacks.patch
 0014-Client-Always-destroy-frame-callback-in-the-actual-c.patch
-0015-Fix-the-logic-for-decoding-modifiers-map-in-Wayland-.patch
 0016-Wayland-client-use-wl_keyboard-to-determine-active-s.patch
 0017-Client-do-not-empty-clipboard-when-a-new-popup-windo.patch
 0018-Set-preedit-cursor-when-cursor-equals-to-0.patch
@@ -19,7 +18,6 @@
 0022-Handle-registry_global-out-of-constructor.patch
 0023-Connect-flushRequest-after-forceRoundTrip.patch
 0024-Move-the-wayland-socket-polling-to-a-separate-event-.patch
-0026-Do-not-create-decorations-when-the-shellSurface-is-n.patch
 0028-Fix-crash-if-no-input-method-module-could-be-loaded.patch
 0029-Client-Remove-mWaitingForUpdateDelivery.patch
 0030-Cursor-position-0-should-still-show-the-cursor.patch

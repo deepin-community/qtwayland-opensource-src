@@ -30,7 +30,6 @@ source:
     - debian/patches/0011-Correctly-detect-if-image-format-is-supported-by-QIm.patch
     - debian/patches/0013-Client-Don-t-always-recreate-frame-callbacks.patch
     - debian/patches/0014-Client-Always-destroy-frame-callback-in-the-actual-c.patch
-    - debian/patches/0015-Fix-the-logic-for-decoding-modifiers-map-in-Wayland-.patch
     - debian/patches/0016-Wayland-client-use-wl_keyboard-to-determine-active-s.patch
     - debian/patches/0017-Client-do-not-empty-clipboard-when-a-new-popup-windo.patch
     - debian/patches/0018-Set-preedit-cursor-when-cursor-equals-to-0.patch
@@ -40,7 +39,6 @@ source:
     - debian/patches/0022-Handle-registry_global-out-of-constructor.patch
     - debian/patches/0023-Connect-flushRequest-after-forceRoundTrip.patch
     - debian/patches/0024-Move-the-wayland-socket-polling-to-a-separate-event-.patch
-    - debian/patches/0026-Do-not-create-decorations-when-the-shellSurface-is-n.patch
     - debian/patches/0028-Fix-crash-if-no-input-method-module-could-be-loaded.patch
     - debian/patches/0029-Client-Remove-mWaitingForUpdateDelivery.patch
     - debian/patches/0030-Cursor-position-0-should-still-show-the-cursor.patch
