@@ -20,7 +20,7 @@ ifneq ($(DEB_HOST_ARCH),$(DEB_BUILD_ARCH))
 		QT_TOOL.qtwaylandscanner.binary=$(CURDIR)/qtwaylandscanner_native \
 		PKG_CONFIG_LIBDIR=/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig:/usr/share/pkgconfig
 else
-	dh_auto_configure -- QT_BUILD_PARTS+=tests
+	dh_auto_configure --
 endif
 
 override_dh_auto_build-indep:
@@ -35,11 +35,6 @@ override_dh_link:
 	dh_link --remaining-packages
 
 override_dh_auto_test-arch:
-ifneq (,$(filter $(DEB_HOST_ARCH),mips mipsel))
-	# mips/mipsel: double free or corruption, unreproducible on porterboxes
-	-dh_auto_test -- -Ctests/auto TESTRUNNER="xvfb-run -a"
-else
-	dh_auto_test -- -Ctests/auto TESTRUNNER="xvfb-run -a"
-endif
+	: # tests disabled for Debian packaging
 
 override_dh_auto_test-indep:

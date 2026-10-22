@@ -1,3 +1,10 @@
+qtwayland-opensource-src (5.15.8-1+dde1) unstable; urgency=medium
+
+  * feat: New upstream release.
+  * chore: disable unit tests in Debian packaging
+
+ -- Liu Zheng <liuzheng@uniontech.com>  Thu, 22 Oct 2026 13:31:06 +0800
+
 qtwayland-opensource-src (5.15.8-1+dde) UNRELEASED; urgency=medium
 
   * New upstream release (5.15.8).
